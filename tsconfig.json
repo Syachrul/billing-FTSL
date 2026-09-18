@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["react-native", "jest"]
+  },
+  "include": [
+    "src/**/*",
+    "App.tsx",
+    "index.js",
+    "nativewind-env.d.ts",
+    "__tests__/**/*"
+  ],
+  "exclude": ["node_modules", "ios", "android", "Pods"]
+}
