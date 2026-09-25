@@ -1,8 +1,10 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {RootNavigator} from '@/navigation';
-import './global.css';
+import { StatusBar } from 'react-native';
+
+import { RootNavigator } from '@app/navigation';
+
+import '@app/styles/global.css';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 function App(): React.JSX.Element {
   return (

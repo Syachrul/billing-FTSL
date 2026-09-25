@@ -1,9 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Button, Card} from '@/components/ui';
+import { Text, View } from 'react-native';
 
-export const HomeScreen: React.FC<{navigation: any}> = ({navigation}) => {
+import { Button, Card } from '@shared/components/ui';
+
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
     <SafeAreaView className="flex-1 bg-background">
       <View className="flex-1 p-4">
@@ -18,10 +20,7 @@ export const HomeScreen: React.FC<{navigation: any}> = ({navigation}) => {
           <Text className="text-textMuted text-sm">• AsyncStorage siap</Text>
         </Card>
 
-        <Button
-          label="Ke Halaman Test"
-          onPress={() => navigation.navigate('Test')}
-        />
+        <Button label="Ke Halaman Test" onPress={() => navigation.navigate('Test')} />
       </View>
     </SafeAreaView>
   );

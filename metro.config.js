@@ -1,6 +1,18 @@
-const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
-const {withNativeWind} = require('nativewind/metro');
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const path = require('path');
 
-const config = mergeConfig(getDefaultConfig(__dirname), {});
+const defaultConfig = getDefaultConfig(__dirname);
 
-module.exports = withNativeWind(config, {input: './global.css'});
+const config = {
+  resolver: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@app': path.resolve(__dirname, 'src/app'),
+      '@features': path.resolve(__dirname, 'src/features'),
+      '@shared': path.resolve(__dirname, 'src/shared'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+    },
+  },
+};
+
+module.exports = mergeConfig(defaultConfig, config);

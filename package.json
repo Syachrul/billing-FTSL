@@ -5,9 +5,15 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest --passWithNoTests",
+    "prepare": "husky",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "test:coverage": "jest --coverage --passWithNoTests",
+    "validate": "npm run lint && npm run typecheck && npm run test"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^3.1.1",
@@ -29,11 +35,14 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
     "@react-native-community/cli": "^20.2.0",
     "@react-native-community/cli-platform-android": "20.1.0",
     "@react-native-community/cli-platform-ios": "^20.2.0",
     "@react-native/babel-preset": "0.86.0",
     "@react-native/eslint-config": "0.86.0",
+    "@react-native/jest-preset": "^0.86.3",
     "@react-native/metro-config": "0.86.0",
     "@react-native/typescript-config": "0.86.0",
     "@types/jest": "^29.5.13",
@@ -42,7 +51,13 @@
     "babel-plugin-module-resolver": "^5.0.3",
     "dotenv": "^17.4.2",
     "eslint": "^8.19.0",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "husky": "^9.1.7",
     "jest": "^25.0.0",
+    "lint-staged": "^17.5.1",
     "prettier": "2.8.8",
     "react-test-renderer": "19.2.3",
     "tailwindcss": "^3.4.17",
@@ -50,5 +65,14 @@
   },
   "engines": {
     "node": ">= 22.11.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx,json,md}": [
+      "prettier --write"
+    ]
   }
 }
