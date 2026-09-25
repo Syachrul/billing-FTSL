@@ -1,8 +1,6 @@
 
 ```
 BillingApp
-├─ .bundle
-│  └─ config
 ├─ .eslintrc.js
 ├─ .prettierrc.js
 ├─ .watchmanconfig
@@ -74,6 +72,10 @@ BillingApp
 ├─ package.json
 ├─ README.md
 ├─ src
+│  ├─ assets
+│  │  ├─ fonts
+│  │  ├─ icons
+│  │  └─ images
 │  ├─ components
 │  │  ├─ layout
 │  │  └─ ui
@@ -93,8 +95,11 @@ BillingApp
 │  │  │  ├─ types
 │  │  │  └─ utils
 │  │  └─ printer
+│  │     ├─ components
 │  │     ├─ screens
 │  │     ├─ services
+│  │     ├─ store
+│  │     ├─ types
 │  │     └─ utils
 │  ├─ hooks
 │  ├─ lib
@@ -111,7 +116,8 @@ BillingApp
 │     └─ env.d.ts
 ├─ tailwind.config.js
 ├─ tsconfig.json
-├─ tsconfig.json.bak
 └─ __tests__
+   ├─ integration
+   └─ unit
 
 ```
